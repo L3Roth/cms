@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aboutmes",
+  "info": {
+    "singularName": "aboutme",
+    "pluralName": "aboutmes",
+    "displayName": "About Me"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

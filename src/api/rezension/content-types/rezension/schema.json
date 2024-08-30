@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rezensions",
+  "info": {
+    "singularName": "rezension",
+    "pluralName": "rezensions",
+    "displayName": "Reviews",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Kommentar": {
+      "type": "text"
+    },
+    "Bewertung": {
+      "type": "integer"
+    }
+  }
+}
