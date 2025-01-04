@@ -4,7 +4,8 @@
   "info": {
     "singularName": "offer",
     "pluralName": "offers",
-    "displayName": "Angebote"
+    "displayName": "Angebote",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,18 @@
       "type": "text"
     },
     "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "IntroText": {
+      "type": "string"
     }
   }
 }

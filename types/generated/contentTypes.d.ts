@@ -859,6 +859,7 @@ export interface ApiOfferOffer extends Schema.CollectionType {
     singularName: 'offer';
     pluralName: 'offers';
     displayName: 'Angebote';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -867,6 +868,7 @@ export interface ApiOfferOffer extends Schema.CollectionType {
     Title: Attribute.String;
     Content: Attribute.Text;
     Images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    IntroText: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -885,11 +887,11 @@ export interface ApiOfferOffer extends Schema.CollectionType {
   };
 }
 
-export interface ApiRezensionRezension extends Schema.CollectionType {
-  collectionName: 'rezensions';
+export interface ApiReviewReview extends Schema.CollectionType {
+  collectionName: 'reviews';
   info: {
-    singularName: 'rezension';
-    pluralName: 'rezensions';
+    singularName: 'review';
+    pluralName: 'reviews';
     displayName: 'Reviews';
     description: '';
   };
@@ -897,20 +899,21 @@ export interface ApiRezensionRezension extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Kommentar: Attribute.Text;
-    Bewertung: Attribute.Integer;
+    ReviewCreator: Attribute.String;
+    Review: Attribute.String;
+    Rating: Attribute.Integer;
+    ReviewCreatorImage: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::rezension.rezension',
+      'api::review.review',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::rezension.rezension',
+      'api::review.review',
       'oneToOne',
       'admin::user'
     > &
@@ -939,7 +942,7 @@ declare module '@strapi/types' {
       'api::aboutme.aboutme': ApiAboutmeAboutme;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::offer.offer': ApiOfferOffer;
-      'api::rezension.rezension': ApiRezensionRezension;
+      'api::review.review': ApiReviewReview;
     }
   }
 }
