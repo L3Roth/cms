@@ -14,5 +14,5 @@ module.exports = ({ env }) => ({
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
-  port: env.int('PORT', 80),
+  port: env.int('PORT'),
 });
